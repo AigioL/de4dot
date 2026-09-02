@@ -115,10 +115,10 @@ namespace de4dot.code.deobfuscators.Confuser {
 				var fields = new List<FieldDef>(fieldToMethods.GetKeys());
 				var type = DotNetUtils.GetModuleType(module);
 				if (fields.Count > 0 && type != null) {
-					foreach (var field in type.Fields) {
-						var fieldType = field.FieldType.TryGetTypeDef();
+					foreach (var @field in type.Fields) {
+						var fieldType = @field.FieldType.TryGetTypeDef();
 						if (fieldType != null && delegateTypesDict.ContainsKey(fieldType))
-							fields.Add(field);
+							fields.Add(@field);
 					}
 				}
 				return fields;
